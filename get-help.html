@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Help</title>
+    <link rel="stylesheet" href="bootstrap-5.3-2.3-dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="gethelp.css">
+</head>
+<body>
+    <a class="navbar-brand" href="index.html" style="color: rgb(1, 1, 5); margin-right: 2000px; font-size: 35px; text-decoration: none; font-weight: bold;">SafeAlert</a>
+
+
+    <h2>🔴 Get Emergency Help</h2>
+
+<div class="help-container">
+    <form action="request_help.php" method="POST">
+        <label for="help-type">Type of Emergency</label>
+        <select id="help-type" name="help-type" required>
+            <option value="">Select Emergency Type</option>
+            <option value="medical">🚑 Medical Emergency</option>
+            <option value="fire">🔥 Fire</option>
+            <option value="crime">🚔 Crime</option>
+            <option value="accident">🚗 Accident</option>
+            <option value="other">⚠️ Other</option>
+        </select>
+
+        <label for="location">Your Location</label>
+        <input type="text" id="location" name="location" placeholder="Enter or share your location" required>
+
+        <label for="message">Quick Message (Optional)</label>
+        <input type="text" id="message" name="message" placeholder="I need urgent help at this location!">
+
+        <button type="submit">📢 Request Help</button>
+    </form>
+
+    <button class="sos" onclick="callEmergency()">🚨 CALL EMERGENCY SERVICES</button>
+</div>
+
+<script>
+    function callEmergency() {
+        window.location.href = 'tel:911';  // Change this for different countries
+    }
+</script>
+
+    
+</body>
+</html>

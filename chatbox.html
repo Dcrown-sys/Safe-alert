@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="bootstrap-5.3-2.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="chatbox.css">
+</head>
+<body>
+    <h2>💬 Chatbot Support</h2>
+<p>Click the chat icon to get instant help.</p>
+
+<!-- Chatbot Button -->
+<div class="chatbot-btn" onclick="toggleChat()">💬</div>
+
+<!-- Chatbot Container -->
+<div class="chat-container" id="chatbot">
+    <div class="chat-header" onclick="toggleChat()">SafeAlert Chatbot ⬆</div>
+    <div class="chat-body" id="chatBody">
+        <div class="chat-message">👋 Hi! How can I help you?</div>
+    </div>
+    <div class="chat-footer">
+        <input type="text" id="userInput" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    function toggleChat() {
+        let chat = document.getElementById("chatbot");
+        chat.style.display = (chat.style.display === "block") ? "none" : "block";
+    }
+
+    function sendMessage() {
+        let input = document.getElementById("userInput");
+        let message = input.value.trim();
+        if (message === "") return;
+
+        let chatBody = document.getElementById("chatBody");
+
+        // User Message
+        let userMsg = document.createElement("div");
+        userMsg.className = "chat-message";
+        userMsg.style.background = "#007bff";
+        userMsg.style.color = "white";
+        userMsg.textContent = "You: " + message;
+        chatBody.appendChild(userMsg);
+
+        // Bot Response
+        let botMsg = document.createElement("div");
+        botMsg.className = "chat-message";
+        botMsg.textContent = getBotResponse(message);
+        setTimeout(() => chatBody.appendChild(botMsg), 1000);
+
+        // Clear input
+        input.value = "";
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function getBotResponse(input) {
+        input = input.toLowerCase();
+
+        if (input.includes("help")) return "You can report an alert or call emergency services.";
+        if (input.includes("report")) return "To report an alert, go to the 'Report Alert' page.";
+        if (input.includes("contact")) return "You can contact us at support@safealert.com.";
+        if (input.includes("emergency")) return "Click the 'Get Help' button to call emergency services.";
+        
+        return "Sorry, I didn’t understand that. Try asking about 'help', 'report', or 'contact'.";
+    }
+</script>
+
+
+
+
+</body>
+</html>
