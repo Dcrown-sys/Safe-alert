@@ -65,52 +65,10 @@
 
     </div>
 
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function (event) {
-            event.preventDefault();
-            var email = document.getElementById("email").value.trim();
-            var password = document.getElementById("password").value.trim();
-
-            if (email === "user@example.com" && password === "password123") {
-                alert("Login Successful!");
-                // Redirect to dashboard (change this to your actual page)
-                window.location.href = "dashboard.html";
-            } else {
-                alert("Invalid email or password.");
-            }
-        });
-    </script>
-
-    <script>
-        function logout() {
-            localStorage.removeItem("user"); // Remove user data
-            window.location.href = "login.html"; // Redirect to login page
-        }
-    </script>
+   
 
 
-<script>
-    window.onload = function () {
-      // Load remembered username if available
-      if (localStorage.getItem("rememberMe") === "true") {
-        document.getElementById("username").value = localStorage.getItem("username");
-        document.getElementById("remember-me").checked = true;
-      }
-  
-      document.getElementById("login-form").addEventListener("submit", function () {
-        const remember = document.getElementById("remember-me").checked;
-        const username = document.getElementById("username").value;
-  
-        if (remember) {
-          localStorage.setItem("username", username);
-          localStorage.setItem("rememberMe", "true");
-        } else {
-          localStorage.removeItem("username");
-          localStorage.setItem("rememberMe", "false");
-        }
-      });
-    };
-  </script>
+   
   
 
 </body>

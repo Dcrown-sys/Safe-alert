@@ -13,7 +13,7 @@
     <h2>Report an Emergency</h2>
 
 <div class="alert-container">
-    <form action="submit_alert.php" method="POST" enctype="multipart/form-data">
+    <form id="alert-form">
         <label for="name">Your Name (Optional)</label>
         <input type="text" id="name" name="name" placeholder="Enter your name">
 
@@ -49,6 +49,32 @@
         <button type="submit">Submit Alert 🚨</button>
     </form>
 </div>
-    
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("z2m6oX8bPKP5FzPsWMIm-"); // Replace with your EmailJS public key
+  })();
+</script> 
+
+<script>
+    document.getElementById("alert-form").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent default form submit behavior
+  
+      emailjs.send("safealertfly", "template_7myfb6k", {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        alert_type: document.getElementById("alert-type").value,
+        location: document.getElementById("location").value,
+        description: document.getElementById("description").value,
+        urgency: document.getElementById("urgency").value
+      }).then(function(response) {
+        alert("🚨 Alert sent successfully!");
+        document.getElementById("alert-form").reset();
+      }, function(error) {
+        alert("❌ Failed to send alert. Try again later.");
+        console.error("EmailJS error:", error);
+      });
+    });
+  </script>
 </body>
 </html>

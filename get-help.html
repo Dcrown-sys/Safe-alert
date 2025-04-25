@@ -11,6 +11,12 @@
     <a class="navbar-brand" href="index.html" style="color: rgb(1, 1, 5); margin-right: 2000px; font-size: 35px; text-decoration: none; font-weight: bold;">SafeAlert</a>
 
 
+    <section id="headline-section">
+        <h2>🇳🇬 Trending in Nigeria</h2>
+        <div id="news-container" class="news-grid"></div>
+      </section>
+
+
     <h2>🔴 Get Emergency Help</h2>
 
 <div class="help-container">
@@ -43,6 +49,31 @@
     }
 </script>
 
-    
+    <script>
+        const apiKey = '23b8971f7c5ff15ecfff5cb2a1c61772'; // Replace with your GNews API key
+const url = `https://gnews.io/api/v4/top-headlines?country=ng&lang=en&token=${apiKey}`;
+
+fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('news-container');
+    data.articles.forEach((article, index) => {
+      const card = document.createElement('div');
+      card.className = 'news-card';
+
+      card.innerHTML = `
+        <img src="${article.image || 'https://via.placeholder.com/400'}" alt="News image">
+        <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
+        <p>${article.description || 'No description available.'}</p>
+        <div class="comment-box">
+          <textarea placeholder="Leave a comment..."></textarea>
+          <button onclick="alert('This comment is local only. For real comments, connect to a backend.')">Post Comment</button>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  });
+    </script>
 </body>
 </html>

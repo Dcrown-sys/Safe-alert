@@ -10,57 +10,68 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to SafeAlert</h1>
-        <p>This is your dashboard where you can manage emergency alerts.</p>
-        <a href="get-help.html">Go to Alerts</a>
-        <a href="index.html" onclick="logout()">Logout</a>
+  <div id="welcomeModal" class="modal-overlay">
+    <div class="modal-content">
+      <h1>Welcome to SafeAlert</h1>
+      <p>This is your dashboard where you can manage emergency alerts.</p>
+      <label><input type="checkbox" id="terms"> I accept the Terms of Service</label><br>
+      <label><input type="checkbox" id="updates"> I want to receive email updates</label><br>
+      <label><input type="checkbox" id="research"> I’m interested in research participation</label><br>
+      <button onclick="confirmWelcome()">Confirm</button>
     </div>
-  <a class="navbar-brand" href="index.html" style="color: rgb(1, 1, 5); margin-right: 2000px; font-size: 35px; text-decoration: none; font-weight: bold;">SafeAlert</a>
+  </div>
+  
+  <!-- Rest of your site -->
+  <div class="animated-glow"></div>
+
+  <!-- Dashboard container -->
+  <div class="container20">
+    <h1>Welcome to SafeAlert</h1>
+    <p>This is your dashboard where you can manage emergency alerts.</p>
+    <a href="get-help.html">Go to Alerts</a>
+    <a href="index.html" onclick="logout()">Logout</a>
+  </div>
 
 
-    <div class="sect" style="display: flex; gap: 50px;">
-        <div class="card" style="width: 18rem;" display="flex">
-            <img src="./images/719d2132-8a79-4e5d-9341-8641639a32d1.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-             
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <img src="./images/85cd4a76-783a-4be9-a6d6-e4d49e469a59.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-             
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <img src="./images/8a47a26e-82a9-4d03-a6fe-2a7dff490825.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-              
-            </div>
-          </div>
-
-          <div class="card" style="width: 18rem;">
-            <img src="./images/c89c77e9-ffca-4f53-8c50-aeea681a0ffa.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-             
-            </div>
-          </div>
+  <!-- <a class="navbar-brand" href="index.html" style="color: rgb(1, 1, 5); margin-right: 2000px; font-size: 35px; text-decoration: none; font-weight: bold;">SafeAlert</a> -->
 
 
+  <div class="features-container">
+    <div class="card">
+      <img src="./images/85cd4a76-783a-4be9-a6d6-e4d49e469a59.webp" alt="SafeAlert Image 2">
+      <div class="card-body">
+        <h3>Location Tracking</h3>
+        <p>Track your location in real-time for enhanced safety.</p>
+      </div>
     </div>
+  
+    <div class="card">
+      <img src="./images/8a47a26e-82a9-4d03-a6fe-2a7dff490825.webp" alt="SafeAlert Image 3">
+      <div class="card-body">
+        <h3>Secure Communication</h3>
+        <p>Communicate securely with emergency contacts.</p>
+      </div>
+    </div>
+  
+    <div class="card">
+      <img src="./images/c89c77e9-ffca-4f53-8c50-aeea681a0ffa.webp" alt="SafeAlert Image 4">
+      <div class="card-body">
+        <h3>Easy Integration</h3>
+        <p>Seamlessly integrate with your safety tools.</p>
+      </div>
+    </div>
+  </div>
 
-    <div class="container">
-      <h2>SafeAlert Live Location Tracking</h2>
-      <p>Click the button below to start sharing your real-time location.</p>
-      <button onclick="startTracking()">Start Tracking</button>
-      <button onclick="shareLocation()">Share Location</button>
-      <p id="status">Waiting for location...</p>
-      <div id="map"></div>
-    
+  <!-- SafeAlert Live Location Tracking -->
+  <div class="container">
+    <h2>SafeAlert Live Location Tracking</h2>
+    <p>Click the button below to start sharing your real-time location.</p>
+    <button onclick="startTracking()">Start Tracking</button>
+    <button onclick="shareLocation()">Share Location</button>
+    <p id="status">Waiting for location...</p>
+    <div id="map"></div>
+  </div>
 
-</div>
   
 
    
@@ -89,8 +100,8 @@
     <div class="footer-content">
       <div class="contact">
         <h3>Contact Us</h3>
-        <p>Email: support@safealert.com</p>
-        <p>Phone: (123) 456-7890</p>
+        <p>Email: safealertfly@gmail.com.com</p>
+        <p>Phone: (240) 384-5100 </p>
       </div>
       <div class="quick">
         <h3>Quick Links</h3>
@@ -116,7 +127,7 @@
 <script>
     async function showWeather() {
       const apiKey = 'd2a8d328ab7ef4d880cfa1b0f776c320'; // Replace this with your OpenWeatherMap API key
-      const city = 'Abuja'; // Change to desired location or dynamically detect
+      const city = 'Lagos'; // Change to desired location or dynamically detect
 
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -288,6 +299,51 @@
       return deg * (Math.PI / 180);
     }
   </script>
+
+<script>
+  function confirmWelcome() {
+    const accepted = document.getElementById('terms').checked;
+    if (!accepted) {
+      alert("You must accept the Terms of Service to continue.");
+      return;
+    }
+
+    // Hide the modal
+    document.getElementById('welcomeModal').style.display = 'none';
+
+    // Optional: Show alert or do something else
+    console.log("Confirmed. Modal hidden.");
+  }
+</script>
+
+<script>
+  function logout() {
+    // Replace this with your actual logout logic
+    alert("Logged out.");
+    // Redirect or clear session storage as needed
+  }
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyCYmCbg9nFHtyuDNetkX2WtEAPh86PB0os",
+  authDomain: "safealert-c9876.firebaseapp.com",
+  projectId: "safealert-c9876",
+  storageBucket: "safealert-c9876.firebasestorage.app",
+  messagingSenderId: "485449780513",
+  appId: "1:485449780513:web:3b21e73628ba4400fa8260",
+  measurementId: "G-LXWJED63PW"
+};
+
+
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+</script>
+
 
 </body>
 </html>
