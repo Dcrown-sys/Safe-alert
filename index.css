@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -106,6 +106,13 @@ header {
 .pricing-card button:hover {
     background: #0056b3;
 }
+
+
+
+
+
+
+
 footer {
     background-color: #007BFF;
     color: white;
@@ -191,20 +198,304 @@ button:hover{
     color:blue;
 }
 
-.footer-content{
-    justify-content: center;
-    display: flex;
-}
 
-.contact, .quick, .follow{
-    display: block;
-    padding: 15px 30px 15px 30px;
-}
+} */
 
-.quick a, .follow a{
+
+
+
+
+/* new inspo */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+    margin: 0;
+    padding-top: 80px;
+  }
+  
+  header {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
     color: white;
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: 600;
+  }
+  
+  .navbar button {
+    background-color: #ffc107;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  
+  .navbar button a {
     text-decoration: none;
-    display: block;
+    color: #212529;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 60px 20px;
+    background: white;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  }
+  
+  h1, h2 {
+    color: #0d6efd;
+  }
+  
+  h2 {
+    margin-top: 40px;
+    font-size: 2rem;
+  }
+  
+  /* Features List */
+  .features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .features li {
+    background: #e6f0ff;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-left: 5px solid #0d6efd;
+    border-radius: 8px;
+    font-size: 18px;
+  }
+  
+  /* CTA */
+  .cta a {
+    display: inline-block;
+    background: #0d6efd;
+    color: white;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .cta a:hover {
+    background: #6610f2;
+  }
+  
+  /* How it Works */
+  .how-it-works {
+    background: #f0f8ff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+  }
+  
+  .step {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .step span {
+    font-size: 50px;
+  }
+  
+  .step h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+  
+  /* Pricing Cards */
+  .pricing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  .pricing-card {
+    background: linear-gradient(135deg, #e6f7ff, #cce5ff);
+    border-radius: 15px;
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pricing-card button {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 25px;
+    font-size: 16px;
+  }
+  
+  /* Testimonials */
+  .user-image img {
+    border: 3px solid #0d6efd;
+  }
+  
+  .card {
+    background: #e6f7ff;
+    border: none;
+    border-radius: 15px;
+  }
+  
+  .user-content h5 {
+    color: #0d6efd;
+    margin-top: 10px;
+  }
+  
+  .ratings {
+    margin-top: 10px;
+  }
+  
+  .ratings i {
+    color: #ffc107;
+  }
+
+  * How SafeAlert Works Section */
+.how-it-works {
+  background: linear-gradient(135deg, #e0f7fa, #f0f8ff);
+  padding: 80px 20px;
+  text-align: center;
 }
 
+.how-it-works h2 {
+  font-size: 2.5rem;
+  color: #0d6efd;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.step {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 280px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.step span {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.step h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.step h3 a {
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.step h3 a:hover {
+  color: #6610f2;
+}
+
+.step p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Footer Section */
+footer {
+    background: #0d6efd;
+    color: #fff;
+    padding: 60px 20px 30px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 30px;
+  }
+  
+  .footer-content div {
+    flex: 1;
+    min-width: 220px;
+  }
+  
+  .footer-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .footer-content p,
+  .footer-content a {
+    font-size: 1rem;
+    color: #e0e0e0;
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-content a:hover {
+    color: #ffc107;
+  }
+  
+  .follow i {
+    font-size: 1.4rem;
+    margin-right: 8px;
+  }
+  
+  footer > p {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-top: 30px;
+  }
 

@@ -8,72 +8,93 @@
     <link rel="stylesheet" href="gethelp.css">
 </head>
 <body>
-    <a class="navbar-brand" href="index.html" style="color: rgb(1, 1, 5); margin-right: 2000px; font-size: 35px; text-decoration: none; font-weight: bold;">SafeAlert</a>
+  <!-- Trending News Section -->
+  <section id="headline-section">
+    <h2 class="section-title">🇳🇬 Trending in Nigeria</h2>
+    <div id="news-container" class="news-grid"></div>
+  </section>
 
+  <!-- Emergency Help Section -->
+  <section id="help-section" class="hidden">
+    <button class="back-button" onclick="goBackToNews()">🔙 Back to News</button>
+    <h2 class="section-title">🔴 Get Emergency Help</h2>
 
-    <section id="headline-section">
-        <h2>🇳🇬 Trending in Nigeria</h2>
-        <div id="news-container" class="news-grid"></div>
-      </section>
-
-
-    <h2>🔴 Get Emergency Help</h2>
-
-<div class="help-container">
-    <form action="request_help.php" method="POST">
-        <label for="help-type">Type of Emergency</label>
-        <select id="help-type" name="help-type" required>
+    <div class="help-container">
+      <form action="request_help.php" method="POST" class="help-form">
+        <div class="form-group">
+          <label for="help-type">Type of Emergency</label>
+          <select id="help-type" name="help-type" required>
             <option value="">Select Emergency Type</option>
             <option value="medical">🚑 Medical Emergency</option>
             <option value="fire">🔥 Fire</option>
             <option value="crime">🚔 Crime</option>
             <option value="accident">🚗 Accident</option>
             <option value="other">⚠️ Other</option>
-        </select>
-
-        <label for="location">Your Location</label>
-        <input type="text" id="location" name="location" placeholder="Enter or share your location" required>
-
-        <label for="message">Quick Message (Optional)</label>
-        <input type="text" id="message" name="message" placeholder="I need urgent help at this location!">
-
-        <button type="submit">📢 Request Help</button>
-    </form>
-
-    <button class="sos" onclick="callEmergency()">🚨 CALL EMERGENCY SERVICES</button>
-</div>
-
-<script>
-    function callEmergency() {
-        window.location.href = 'tel:911';  // Change this for different countries
-    }
-</script>
-
-    <script>
-        const apiKey = '23b8971f7c5ff15ecfff5cb2a1c61772'; // Replace with your GNews API key
-const url = `https://gnews.io/api/v4/top-headlines?country=ng&lang=en&token=${apiKey}`;
-
-fetch(url)
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById('news-container');
-    data.articles.forEach((article, index) => {
-      const card = document.createElement('div');
-      card.className = 'news-card';
-
-      card.innerHTML = `
-        <img src="${article.image || 'https://via.placeholder.com/400'}" alt="News image">
-        <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
-        <p>${article.description || 'No description available.'}</p>
-        <div class="comment-box">
-          <textarea placeholder="Leave a comment..."></textarea>
-          <button onclick="alert('This comment is local only. For real comments, connect to a backend.')">Post Comment</button>
+          </select>
         </div>
-      `;
 
-      container.appendChild(card);
-    });
-  });
-    </script>
+        <div class="form-group">
+          <label for="location">Your Location</label>
+          <input type="text" id="location" name="location" placeholder="Enter or share your location" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Quick Message (Optional)</label>
+          <input type="text" id="message" name="message" placeholder="I need urgent help at this location!">
+        </div>
+
+        <button type="submit" class="submit-btn">📢 Request Help Now</button>
+      </form>
+
+      <button class="sos-btn" onclick="callEmergency()">🚨 CALL EMERGENCY SERVICES</button>
+    </div>
+  </section>
+
+  <!-- Button to Open Help Form -->
+  <div class="floating-help-button">
+    <button onclick="openHelpSection()">🆘 Need Help?</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function callEmergency() {
+      window.location.href = 'tel:911'; // Update as needed
+    }
+
+    function openHelpSection() {
+      document.getElementById('headline-section').style.display = 'none';
+      document.getElementById('help-section').classList.remove('hidden');
+    }
+
+    function goBackToNews() {
+      document.getElementById('headline-section').style.display = 'block';
+      document.getElementById('help-section').classList.add('hidden');
+    }
+
+    const apiKey = '23b8971f7c5ff15ecfff5cb2a1c61772'; // Replace with your GNews API key
+    const url = `https://gnews.io/api/v4/top-headlines?country=ng&lang=en&token=${apiKey}`;
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('news-container');
+        data.articles.forEach((article, index) => {
+          const card = document.createElement('div');
+          card.className = 'news-card';
+
+          card.innerHTML = `
+            <img src="${article.image || 'https://via.placeholder.com/400'}" alt="News image">
+            <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
+            <p>${article.description || 'No description available.'}</p>
+            <div class="comment-box">
+              <textarea placeholder="Leave a comment..."></textarea>
+              <button onclick="alert('This comment is local only. For real comments, connect to a backend.')">Post Comment</button>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+      });
+  </script>
 </body>
 </html>

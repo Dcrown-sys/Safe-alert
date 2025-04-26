@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     text-align: center;
@@ -92,4 +92,200 @@ button:hover {
     padding: 6px 12px;
     border-radius: 5px;
     cursor: pointer;
-  }
+  } */
+
+  /* Reset */
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 28px;
+  margin: 30px 0 20px 0;
+  text-align: center;
+  color: #333;
+}
+
+/* News Section */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.news-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card h3 {
+  font-size: 18px;
+  margin: 10px;
+}
+
+.news-card h3 a {
+  color: #ff416c;
+  text-decoration: none;
+}
+
+.news-card p {
+  padding: 0 10px 10px 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Comment Box */
+.comment-box {
+  padding: 10px;
+  border-top: 1px solid #eee;
+}
+
+.comment-box textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.comment-box button {
+  background: #ff416c;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Help Section */
+#help-section {
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Back Button */
+.back-button {
+  background: none;
+  border: none;
+  color: #ff416c;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Help Container */
+.help-container {
+  background: white;
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Help Form */
+.help-form .form-group {
+  margin-bottom: 20px;
+}
+
+.help-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.help-form input,
+.help-form select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f4f6f9;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #ff416c;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #ff4b2b;
+}
+
+/* SOS Button */
+.sos-btn {
+  width: 100%;
+  background: #ff0000;
+  color: white;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.sos-btn:hover {
+  background: #cc0000;
+}
+
+/* Floating Help Button */
+.floating-help-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.floating-help-button button {
+  background: #ff416c;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.floating-help-button button:hover {
+  background: #ff4b2b;
+}

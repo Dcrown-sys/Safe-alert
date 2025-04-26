@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     justify-content: center;
@@ -95,4 +95,181 @@ i{
 
 .rem label{
     margin-left: -5px;
-}
+} */
+
+/* Reset and Body Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    transition: background-color 0.5s ease;
+  }
+  
+  /* Floating Menu Button */
+  .menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #ff416c;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu-btn i {
+    color: white;
+    font-size: 24px;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #111;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding-top: 60px;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar a {
+    padding: 20px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: #ff416c;
+  }
+  
+  .sidebar .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Login Section */
+  .login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .login-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .login-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .input-group i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff416c;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px 40px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f4f6f9;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+  }
+  
+  .input-group input:focus {
+    border-color: #ff416c;
+  }
+  
+  /* Remember Me Section */
+  .remember-me {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .remember-me label {
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  /* Login Button */
+  .login-btn {
+    width: 100%;
+    background-color: #ff416c;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #ff4b2b;
+  }
+  
+  /* Forgot Password */
+  .forgot-password {
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #ff416c;
+    font-size: 14px;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .login-container {
+      width: 90%;
+      padding: 20px;
+    }

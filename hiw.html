@@ -10,119 +10,115 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <div id="welcomeModal" class="modal-overlay">
-    <div class="modal-content">
-      <h1>Welcome to SafeAlert</h1>
-      <p>This is your dashboard where you can manage emergency alerts.</p>
-      <label><input type="checkbox" id="terms"> I accept the Terms of Service</label><br>
-      <label><input type="checkbox" id="updates"> I want to receive email updates</label><br>
-      <label><input type="checkbox" id="research"> I’m interested in research participation</label><br>
-      <button onclick="confirmWelcome()">Confirm</button>
+<!-- Welcome Modal -->
+<div id="welcomeModal" class="modal-overlay">
+  <div class="modal-content">
+    <h1>Welcome to SafeAlert</h1>
+    <p>Manage your emergency alerts here for a safer experience.</p>
+    <label><input type="checkbox" id="terms"> I accept the Terms of Service</label><br>
+    <label><input type="checkbox" id="updates"> I want to receive email updates</label><br>
+    <label><input type="checkbox" id="research"> I'm interested in research participation</label><br>
+    <button class="btn-primary" onclick="confirmWelcome()">Confirm</button>
+  </div>
+</div>
+
+<!-- Main Dashboard -->
+<div class="container">
+  <div class="dashboard-header">
+    <h1>Welcome to SafeAlert</h1>
+    <p>Here you can manage your emergency alerts for peace of mind.</p>
+    <div class="action-buttons">
+      <a href="get-help.html" class="btn-primary">Go to Alerts</a>
+      <a href="index.html" class="btn-danger" onclick="logout()">Logout</a>
     </div>
   </div>
-  
-  <!-- Rest of your site -->
-  <div class="animated-glow"></div>
 
-  <!-- Dashboard container -->
-  <div class="container20">
-    <h1>Welcome to SafeAlert</h1>
-    <p>This is your dashboard where you can manage emergency alerts.</p>
-    <a href="get-help.html">Go to Alerts</a>
-    <a href="index.html" onclick="logout()">Logout</a>
-  </div>
-
-
-  <!-- <a class="navbar-brand" href="index.html" style="color: rgb(1, 1, 5); margin-right: 2000px; font-size: 35px; text-decoration: none; font-weight: bold;">SafeAlert</a> -->
-
-
+  <!-- Features Section -->
   <div class="features-container">
     <div class="card">
-      <img src="./images/85cd4a76-783a-4be9-a6d6-e4d49e469a59.webp" alt="SafeAlert Image 2">
+      <img src="./images/85cd4a76-783a-4be9-a6d6-e4d49e469a59.webp" alt="Location Tracking">
       <div class="card-body">
         <h3>Location Tracking</h3>
         <p>Track your location in real-time for enhanced safety.</p>
       </div>
     </div>
-  
+
     <div class="card">
-      <img src="./images/8a47a26e-82a9-4d03-a6fe-2a7dff490825.webp" alt="SafeAlert Image 3">
+      <img src="./images/c89c77e9-ffca-4f53-8c50-aeea681a0ffa.webp" alt="Secure Communication">
       <div class="card-body">
         <h3>Secure Communication</h3>
-        <p>Communicate securely with emergency contacts.</p>
+        <p>Communicate securely with your emergency contacts.</p>
       </div>
     </div>
-  
+
     <div class="card">
-      <img src="./images/c89c77e9-ffca-4f53-8c50-aeea681a0ffa.webp" alt="SafeAlert Image 4">
+      <img src="./images/8a47a26e-82a9-4d03-a6fe-2a7dff490825.webp" alt="Easy Integration">
       <div class="card-body">
         <h3>Easy Integration</h3>
-        <p>Seamlessly integrate with your safety tools.</p>
+        <p>Seamlessly integrate with your existing safety tools.</p>
       </div>
     </div>
   </div>
 
-  <!-- SafeAlert Live Location Tracking -->
-  <div class="container">
+  <!-- Live Location Tracking Section -->
+  <div class="location-container">
     <h2>SafeAlert Live Location Tracking</h2>
-    <p>Click the button below to start sharing your real-time location.</p>
-    <button onclick="startTracking()">Start Tracking</button>
-    <button onclick="shareLocation()">Share Location</button>
+    <p>Start sharing your real-time location with responders.</p>
+    <div class="location-buttons">
+      <button class="btn-primary" onclick="startTracking()">Start Tracking</button>
+      <button class="btn-secondary" onclick="shareLocation()">Share Location</button>
+    </div>
     <p id="status">Waiting for location...</p>
     <div id="map"></div>
   </div>
 
-  
-
-   
-
-
-    <button class="report-btn" onclick="window.location.href='Report-Alert.html'">🚨 Report an Alert</button>
-
-    <div style="text-align: center; padding: 20px;">
-      <h2>Need Immediate Help?</h2>
-      <button onclick="alert('Calling 911...')" style="padding: 10px; background: red; color: white; border: none; margin: 10px;">📞 Call Emergency Services</button>
-      <button onclick="findSafeZones()" style="padding: 10px; background: blue; color: white; border: none; margin: 10px;">
-        📍 Find Safe Zones
-      </button>
-      <button onclick="alert('Connecting to a Responder...')" style="padding: 10px; background: green; color: white; border: none; margin: 10px;">💬 Chat with a Responder</button>
+  <!-- Immediate Help Section -->
+  <div class="immediate-help">
+    <h2>Need Immediate Help?</h2>
+    <div class="help-buttons">
+      <button class="btn-danger" onclick="alert('Calling 911...')">📞 Call Emergency Services</button>
+      <button class="btn-primary" onclick="findSafeZones()">📍 Find Safe Zones</button>
+      <button class="btn-success" onclick="alert('Connecting to a Responder...')">💬 Chat with a Responder</button>
+    </div>
   </div>
 
+  <!-- Safety Tips Section -->
   <div class="tips-container">
     <div class="tip-card" onclick="showWeather()">🌪️ Weather Safety</div>
-    <div id="weather-forecast"></div>  
+    <div id="weather-forecast"></div>
     <div class="tip-card" onclick="alert('Never give personal info to strangers.')">🛡️ Online Safety</div>
     <div class="tip-card"><a href="https://hei.org.ng/emergency-numbers/">🚨 Emergency Tips</a></div>
+  </div>
 </div>
 
-
-<footer>
-    <div class="footer-content">
-      <div class="contact">
-        <h3>Contact Us</h3>
-        <p>Email: safealertfly@gmail.com.com</p>
-        <p>Phone: (240) 384-5100 </p>
-      </div>
-      <div class="quick">
-        <h3>Quick Links</h3>
-        <a href="index.html">Home</a>
-        <a href="hiw.html">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="contact.html">Contact</a>
-        <a href="get-help.html">Get-help</a>
-      </div>
-      <div class="follow">
-        <h3>Follow Us</h3>
-        <i class="fa-brands fa-facebook"></i>
-        <a href="#">Facebook</a>
-        <i class="fa-brands fa-square-x-twitter"></i>
-        <a href="#">Twitter</a>
-        <i class="fa-brands fa-linkedin"></i>
-        <a href="#">LinkedIn</a>
-      </div>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="contact">
+      <h3>Contact Us</h3>
+      <p>Email: safealertfly@gmail.com</p>
+      <p>Phone: (240) 384-5100</p>
     </div>
-    <p>&copy; 2025 SafeAlert. All rights reserved.</p>
-  </footer>
+    <div class="quick-links">
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="hiw.html">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="get-help.html">Get Help</a>
+    </div>
+    <div class="follow">
+      <h3>Follow Us</h3>
+      <i class="fa-brands fa-facebook"></i>
+      <a href="#">Facebook</a>
+      <i class="fa-brands fa-square-x-twitter"></i>
+      <a href="#">Twitter</a>
+      <i class="fa-brands fa-linkedin"></i>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+  <p>&copy; 2025 SafeAlert. All rights reserved.</p>
+</footer>
 
 <script>
     async function showWeather() {

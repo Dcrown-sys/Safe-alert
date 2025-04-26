@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -53,7 +53,7 @@ body {
 }
 
 /* Glowing animation background only for the dashboard */
-.container20::before {
+/* .container20::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -251,7 +251,7 @@ a { display: block; margin-top: 20px; text-decoration: none; color: white; backg
 
 
 /* carousel */
-.features-container {
+/* .features-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -305,9 +305,274 @@ a { display: block; margin-top: 20px; text-decoration: none; color: white; backg
 }
 
 /* Responsive layout for mobile */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .features-container {
     flex-direction: column;
     align-items: center;
+  }
+}  */ 
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.5s ease;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-danger, .btn-success {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #7f8c8d;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-danger:hover, .btn-success:hover {
+  transform: scale(1.05);
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  animation: fadeInDown 1s ease;
+}
+
+.dashboard-header p {
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.action-buttons {
+  margin-top: 20px;
+}
+
+/* Features Section */
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.card {
+  background: white;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.card-body p {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Location Tracking Section */
+.location-container {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #eef6fb;
+  margin: 20px 0;
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.location-buttons {
+  margin-top: 20px;
+}
+
+/* Immediate Help Section */
+.immediate-help {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.help-buttons button {
+  margin: 10px;
+}
+
+/* Safety Tips */
+.tips-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.tip-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.tip-card:hover {
+  background: #3498db;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.tip-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Footer */
+footer.footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer-content div {
+  margin: 10px 0;
+}
+
+.footer-content a {
+  display: block;
+  color: #bdc3c7;
+  margin: 5px 0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-content a:hover {
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .features-container, .tips-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
   }
 }
